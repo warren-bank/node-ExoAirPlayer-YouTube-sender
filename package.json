@@ -1,0 +1,38 @@
+{
+  "name": "@warren-bank/exoairplayer-youtube-sender",
+  "version": "1.0.0",
+  "main": "lib/process_cli.js",
+  "description": "Command-line utility to 'cast' videos from YouTube to ExoAirPlayer.",
+  "license": "GPL-2.0",
+  "bin": {
+    "exoairtube": "bin/exoairtube.js"
+  },
+  "dependencies": {
+    "@warren-bank/node-process-argv": "^1.2.1",
+    "@warren-bank/node-request": "^2.0.10",
+    "bonjour": "^3.5.0",
+    "ytdl-core": "*"
+  },
+  "author": {
+    "name": "Warren R. Bank",
+    "email": "warren.r.bank@gmail.com",
+    "url": "https://github.com/warren-bank"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warren-bank/node-ExoAirPlayer-YouTube-sender"
+  },
+  "keywords": [
+    "YouTube",
+    "youtube",
+    "AirPlay",
+    "airplay",
+    "ExoAirPlayer",
+    "video",
+    "videos",
+    "playlist",
+    "sender",
+    "player",
+    "cast"
+  ]
+}

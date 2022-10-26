@@ -1,0 +1,3 @@
+node_modules/
+
+tests/1_unit/**/output.txt
