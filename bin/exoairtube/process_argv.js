@@ -7,6 +7,7 @@ const argv_flags = {
   "--verbose":               {bool: true},
   "--queue":                 {bool: true},
   "--url":                   {},
+  "--playlist-range":        {},
   "--device-host":           {},
   "--device-port":           {num: "int"},
   "--discovery-timeout":     {num: "int"}
@@ -17,6 +18,7 @@ const argv_flag_aliases = {
   "--verbose":               ["-v"],
   "--queue":                 ["-q"],
   "--url":                   ["-u"],
+  "--playlist-range":        ["-r"],
   "--device-host":           ["-h"],
   "--device-port":           ["-p"],
   "--discovery-timeout":     ["-t"]

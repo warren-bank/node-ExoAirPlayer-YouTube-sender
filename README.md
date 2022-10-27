@@ -39,6 +39,31 @@ options:
     - playlist (format 2)
         https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA
 
+"-r" <range>
+"--playlist-range" <range>
+    Specify a subset of videos in a playlist in "--url".
+    Spec for <range>:
+      [-]<start_index>:<stop_index>
+    Where:
+    * [-]
+      - is optional
+      - indicates that the resulting subset of videos
+        should be sorted in reverse order
+    * <start_index>
+      - is an integer in the range:
+          [0 .. <count_of_videos_in_playlist> - 1]
+      - is required
+      - is included in subset of videos
+    * <stop_index>
+      - is an integer in the range:
+          [<start_index> + 1 .. <count_of_videos_in_playlist>]
+      - is optional
+        * default value: <count_of_videos_in_playlist>
+      - is not included in subset of videos
+    * <count_of_videos_in_playlist>
+      - has a maximum value of: 100
+    Default: "0"
+
 "-h" <IP_address>
 "--device-host" <IP_address>
     Specify the hostname or IP for an instance of ExoAirPlayer.
