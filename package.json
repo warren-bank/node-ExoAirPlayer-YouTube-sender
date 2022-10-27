@@ -1,6 +1,6 @@
 {
   "name": "@warren-bank/exoairplayer-youtube-sender",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "lib/process_cli.js",
   "description": "Command-line utility to 'cast' videos from YouTube to ExoAirPlayer.",
   "license": "GPL-2.0",
