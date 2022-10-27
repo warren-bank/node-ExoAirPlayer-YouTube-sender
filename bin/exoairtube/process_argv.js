@@ -34,15 +34,15 @@ catch(e) {
   process.exit(1)
 }
 
-if (argv_vals["--help"] || !argv_vals["--url"]) {
-  const help = require('./help')
-  console.log(help)
-  process.exit(0)
-}
-
 if (argv_vals["--version"]) {
   const data = require('../../package.json')
   console.log(data.version)
+  process.exit(0)
+}
+
+if (argv_vals["--help"] || !argv_vals["--url"]) {
+  const help = require('./help')
+  console.log(help)
   process.exit(0)
 }
 
