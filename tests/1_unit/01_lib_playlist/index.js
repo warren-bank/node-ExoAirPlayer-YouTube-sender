@@ -15,11 +15,11 @@ const run_all_tests = async function() {
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 
-  range = "4:14"
+  range = "5:15"
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 
-  range = "-4:14"
+  range = "-5:15"
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 }

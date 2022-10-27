@@ -51,18 +51,18 @@ options:
         should be sorted in reverse order
     * <start_index>
       - is an integer in the range:
-          [0 .. <count_of_videos_in_playlist> - 1]
+          [1 .. <count_of_videos_in_playlist>]
       - is required
       - is included in subset of videos
     * <stop_index>
       - is an integer in the range:
-          [<start_index> + 1 .. <count_of_videos_in_playlist>]
+          [<start_index> + 1 .. <count_of_videos_in_playlist> + 1]
       - is optional
-        * default value: <count_of_videos_in_playlist>
+        * default value: <count_of_videos_in_playlist> + 1
       - is not included in subset of videos
     * <count_of_videos_in_playlist>
       - has a maximum value of: 100
-    Default: "0"
+    Default: "1"
 
 "-h" <IP_address>
 "--device-host" <IP_address>
