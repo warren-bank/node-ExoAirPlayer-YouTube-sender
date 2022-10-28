@@ -29,26 +29,42 @@ options:
 "--playlist-range" <range>
     Specify a subset of videos in a playlist in "--url".
     Spec for <range>:
-      [-]<start_index>:<stop_index>
+      [-]<start_index>[:]<stop_index>
     Where:
     * [-]
       - is optional
       - indicates that the resulting subset of videos
         should be sorted in reverse order
+      - is implied when <start_index> is greater than <stop_index>
     * <start_index>
       - is an integer in the range:
           [1 .. <count_of_videos_in_playlist>]
-      - is required
       - is included in subset of videos
+      - is required
+    * [:]
+      - any non-numeric non-empty string can be used as a delimiter
+      - is optional
     * <stop_index>
       - is an integer in the range:
-          [<start_index> + 1 .. <count_of_videos_in_playlist> + 1]
+          [<start_index> .. <count_of_videos_in_playlist>]
+      - is included in subset of videos
       - is optional
-        * default value: <count_of_videos_in_playlist> + 1
-      - is not included in subset of videos
+      - default value depends on whether <range> ends with a [:] delimiter
+        * if not: <start_index>
+          range:  cherry picks a single video at <start_index>
+        * if yes: <count_of_videos_in_playlist>
+          range:  includes <start_index> and all videos that follow
     * <count_of_videos_in_playlist>
       - has a maximum value of: 100
-    Default: "1"
+    Example:
+      - <range> specs (all equivalent):
+          1) -r "-5:10"
+          2) -r "-5-10"
+          3) -r "-5..10"
+          4) -r "10:5"
+      - videos included in all example <range> specs:
+          [10,9,8,7,6,5]
+    Default: "1:"
 
 "-h" <IP_address>
 "--device-host" <IP_address>
