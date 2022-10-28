@@ -1,3 +1,5 @@
+require('../../../lib/verbose_logger').set_enabled(true)
+
 const {get_playlist_id, get_videos_in_playlist, get_videos_in_range} = require('../../../lib/playlist')
 
 const run_test = async function(url, range) {
@@ -15,11 +17,11 @@ const run_all_tests = async function() {
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 
-  range = "5:15"
+  range = "1..10"
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 
-  range = "-5:15"
+  range = "-11..20"
   await run_test('https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA', range)
   await run_test('https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA', range)
 }

@@ -1,7 +1,6 @@
-const {find_devices} = require('../../../lib/mdns_discovery')
-const verbose        = require('../../../lib/verbose_logger')
+require('../../../lib/verbose_logger').set_enabled(true)
 
-verbose.set_enabled(true)
+const {find_devices} = require('../../../lib/mdns_discovery')
 
 const configs = {
   timeout: 15
