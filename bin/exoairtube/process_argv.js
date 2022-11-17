@@ -46,6 +46,17 @@ if (argv_vals["--help"] || !argv_vals["--url"]) {
   process.exit(0)
 }
 
+const regexs = {
+  url_format_2: new RegExp('https://youtu.be/([^\\?]+)(?:\\?(.*))?$')
+}
+
+{
+  const matches = regexs.url_format_2.exec(argv_vals["--url"])
+  if (matches && (matches.length >= 3)) {
+    argv_vals["--url"] = 'https://www.youtube.com/watch?v=' + matches[1] + (matches[2] ? ('&' + matches[2]) : '')
+  }
+}
+
 if (argv_vals["--device-host"] && !argv_vals["--device-port"])
   argv_vals["--device-port"] = 8192
 

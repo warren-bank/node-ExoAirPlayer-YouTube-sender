@@ -32,8 +32,10 @@ options:
 "--url" <URL>
     Specify the YouTube URL to play on ExoAirPlayer.
     Examples:
-    - video
+    - video (format 1)
         https://www.youtube.com/watch?v=IQ4dUowGAKI
+    - video (format 2)
+        https://youtu.be/IQ4dUowGAKI
     - playlist (format 1)
         https://www.youtube.com/playlist?list=UUFgSnQojiEXb9-N3ViRdRnA
     - playlist (format 2)
