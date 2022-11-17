@@ -27,6 +27,11 @@ options:
     - playlist (format 2)
         https://www.youtube.com/watch?v=IQ4dUowGAKI&list=UUFgSnQojiEXb9-N3ViRdRnA
 
+"-s" <seconds>
+"--start-at" <seconds>
+    Specify an amount of time to seek within the first video to begin playback.
+    When not specified, this value can also be extracted from the YouTube URL.
+
 "-r" <range>
 "--playlist-range" <range>
     Specify a subset of videos in a playlist in "--url".

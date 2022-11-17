@@ -10,7 +10,8 @@ const argv_flags = {
   "--playlist-range":        {},
   "--device-host":           {},
   "--device-port":           {num: "int"},
-  "--discovery-timeout":     {num: "int"}
+  "--discovery-timeout":     {num: "int"},
+  "--start-at":              {num: "int"}
 }
 
 const argv_flag_aliases = {
@@ -21,7 +22,8 @@ const argv_flag_aliases = {
   "--playlist-range":        ["-r"],
   "--device-host":           ["-h"],
   "--device-port":           ["-p"],
-  "--discovery-timeout":     ["-t"]
+  "--discovery-timeout":     ["-t"],
+  "--start-at":              ["-s"]
 }
 
 let argv_vals = {}
@@ -47,13 +49,21 @@ if (argv_vals["--help"] || !argv_vals["--url"]) {
 }
 
 const regexs = {
-  url_format_2: new RegExp('https://youtu.be/([^\\?]+)(?:\\?(.*))?$')
+  url_format_2: new RegExp('https://youtu.be/([^\\?]+)(?:\\?(.*))?$'),
+  start_at:     new RegExp('^[^\\?]+\\?(?:.*&)*t=(\\d+).*$'),
 }
 
 {
   const matches = regexs.url_format_2.exec(argv_vals["--url"])
   if (matches && (matches.length >= 3)) {
     argv_vals["--url"] = 'https://www.youtube.com/watch?v=' + matches[1] + (matches[2] ? ('&' + matches[2]) : '')
+  }
+}
+
+if (!argv_vals["--start-at"]) {
+  const matches = regexs.start_at.exec(argv_vals["--url"])
+  if (matches && (matches.length >= 2)) {
+    argv_vals["--start-at"] = parseInt(matches[1], 10)
   }
 }
 
